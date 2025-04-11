@@ -1,0 +1,398 @@
+/* src/App.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #f5f7fa;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-content {
+  padding: 20px;
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Add this class to main content containers in your views */
+.content-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+  margin-top: 20px;
+}
+
+/* Button styling for consistency */
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button.secondary {
+  background-color: #95a5a6;
+}
+
+button.secondary:hover {
+  background-color: #7f8c8d;
+}
+
+button.danger {
+  background-color: #e74c3c;
+}
+
+button.danger:hover {
+  background-color: #c0392b;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, select, textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Login view styling */
+.login-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Dashboard styling */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 0;
+  color: #7f8c8d;
+}
+
+.courses-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.courses-list th, .courses-list td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.courses-list th {
+  background-color: #f5f7fa;
+  font-weight: bold;
+}
+
+.courses-list tr:hover {
+  background-color: #f9f9f9;
+}
+
+.actions-cell {
+  display: flex;
+  gap: 10px;
+}
+
+.action-btn {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+/* Course creation view styling */
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.roster-preview {
+  background-color: #f5f7fa;
+  padding: 15px;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.roster-preview pre {
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+/* Record attendance view styling */
+.course-header {
+  margin-bottom: 20px;
+}
+
+.meetings-list {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.meeting-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.meeting-item:hover {
+  border-color: #3498db;
+}
+
+.meeting-item.selected {
+  background-color: #f0f7fb;
+  border-color: #3498db;
+}
+
+.meeting-item.completed {
+  opacity: 0.7;
+}
+
+.meeting-item.active {
+  border-left: 4px solid #2ecc71;
+}
+
+.meeting-status {
+  text-transform: capitalize;
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+.attendance-display {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.qr-section {
+  display: flex;
+  margin: 20px 0;
+  gap: 30px;
+}
+
+.mock-qr-code {
+  width: 200px;
+  height: 200px;
+  background-color: #f5f7fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+}
+
+.qr-placeholder {
+  font-size: 18px;
+  color: #7f8c8d;
+}
+
+.attendance-link {
+  flex: 1;
+}
+
+.link-display {
+  background-color: #f5f7fa;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.copy-btn, .refresh-btn {
+  margin-top: 10px;
+}
+
+.instructions-display {
+  margin: 20px 0;
+}
+
+.instructions-display ol {
+  margin-left: 20px;
+}
+
+.attendance-actions {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+/* Report attendance view styling */
+.attendance-type-selection {
+  margin: 20px 0;
+}
+
+.section-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.remote-btn {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.remote-btn.active {
+  background-color: #2ecc71;
+}
+
+.seating-selection-container {
+  margin-top: 15px;
+}
+
+.classroom-layout {
+  margin: 20px 0;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.front-indicator {
+  text-align: center;
+  margin-bottom: 15px;
+  padding: 5px;
+  background-color: #f5f7fa;
+  font-weight: bold;
+}
+
+.seat-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.seat {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.seat:hover {
+  background-color: #f0f7fb;
+}
+
+.seat.selected {
+  background-color: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+
+.honor-pledge {
+  margin: 20px 0;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: normal;
+}
+
+.checkbox-label input {
+  margin-top: 3px;
+}
+
+.attendance-success {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.attendance-success h1 {
+  color: #2ecc71;
+  margin-bottom: 20px;
+}
+
+.attendance-success .note {
+  margin-top: 20px;
+  font-style: italic;
+  color: #7f8c8d;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .app-content {
+    padding: 15px;
+  }
+  
+  .content-container {
+    padding: 15px;
+  }
+  
+  .qr-section {
+    flex-direction: column;
+  }
+  
+  .mock-qr-code {
+    margin: 0 auto;
+  }
+  
+  .dashboard-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .section-label {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .actions-cell {
+    flex-direction: column;
+  }
+}
