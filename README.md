@@ -1,70 +1,113 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Installation & Setup Instructions
 
-In the project directory, you can run:
+- **Clone the repository**
+  ```
+  git clone https://github.com/your-username/attend-track.git
+  cd attend-track
+  ```
+- **Install React Router (if not included in package.json)**
+  ```
+  npm install react-router-dom
+  ```
 
-### `npm start`
+- **Add Font Awesome for icons**
+  Add this line to your `public/index.html`:
+  ```html
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Start the development server**
+  ```
+  npm start
+  ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Access the application**
+  Open your browser and navigate to `http://localhost:3000`
 
-### `npm test`
+## Project Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The project follows a standard React application structure with component-based organization:
 
-### `npm run build`
+```
+src/
+  ├── components/
+  │     └── Navbar.jsx
+  │     └── Navbar.css
+  ├── views/
+  │     └── LoginView.jsx
+  │     └── InstructorDashboard.jsx
+  │     └── CourseCreationView.jsx
+  │     └── RecordAttendanceView.jsx
+  │     └── ReportAttendanceView.jsx
+  ├── App.jsx
+  └── App.css
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Component Overview
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Core Components
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **App.jsx**
+   - Main application component
+   - Handles routing and authentication state
+   - Connects all view components
 
-### `npm run eject`
+2. **Navbar.jsx**
+   - Navigation bar component that appears on all pages
+   - Adjusts display based on user authentication status
+   - Provides links to key application areas
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### View Components
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **LoginView.jsx**
+   - Entry point for instructors
+   - Simple form for instructor authentication with employee ID
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. **InstructorDash.jsx**
+   - Dashboard displaying all courses created by the instructor
+   - Provides course management functionality (create, delete)
+   - Entry point to record attendance for specific courses
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. **CourseView.jsx**
+   - Form for creating new courses
+   - Includes fields for course details and roster upload
+   - Validates input and provides feedback
 
-## Learn More
+4. **Attendance.jsx**
+   - Interface for instructors to generate attendance tracking links/QR codes
+   - Displays all class meetings and allows selection
+   - Provides instructions for student attendance tracking
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Navigation Flow
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The application flow follows a logical progression:
 
-### Code Splitting
+1. Instructors log in via the login page
+2. After authentication, they are directed to the dashboard
+3. From the dashboard, they can:
+   - Create new courses
+   - Manage existing courses
+   - Access attendance recording for any course
+4. Attendance links generated can be shared with students
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Technology Stack
 
-### Analyzing the Bundle Size
+- **React**: Frontend library for building the user interface
+- **React Router**: For navigation and routing within the application
+- **HTML/CSS**: For styling and structure
+- **JavaScript (ES6+)**: For application logic
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Future Development
 
-### Making a Progressive Web App
+This initial implementation focuses on instructor functionality. Future enhancements planned include:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Student authentication and dashboard
+- Interactive classroom seating charts
+- Attendance analytics and reporting
+- Integration with university systems
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Your License Information]
